@@ -2,7 +2,7 @@
 
 ## Summary
 
-This execerise is designed to test your understanding of the major concepts of real world JavaScript and the patterns of React and Redux. The project is fully configured for you so you won't have to focus on configuring a build or working out a development instance. Everything has been based upon Facebook's React biolerplate, create-react-app.
+This exercise is designed to test your understanding of the major concepts of real world JavaScript and the patterns of React and Redux. The project is fully configured for you so you won't have to focus on configuring a build or working out a development instance. Everything has been based upon Facebook's React biolerplate, create-react-app.
 
 This will test your ability to write components, map the redux store and its dispatch to the props of a component, maintain immutability, write and comprehend ES6 and create well formed classes.
 
