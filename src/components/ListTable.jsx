@@ -1,25 +1,32 @@
 import React from "react";
 
-export const ListTable = ({ groceryList }) => {
+export const ListTable = ({
+  groceryList,
+  removeItem,
+  selectItem,
+  deselectItem
+}) => {
   const groceryItems = groceryList.map(
     ({ id, name, category, deliveryMethod }) => {
       return (
         <table>
-          <tr>
-            <td>{name}</td>
-            <td>{id}</td>
-            <td>{category}</td>
-            <td>{deliveryMethod}</td>
-            <td>
-              <button>remove</button>
-            </td>
-            <td>
-              <button>select</button>
-            </td>
-            <td>
-              <button>deselect</button>
-            </td>
-          </tr>
+          <tbody>
+            <tr key={id}>
+              <td>{name}</td>
+              <td>{id}</td>
+              <td>{category}</td>
+              <td>{deliveryMethod}</td>
+              <td>
+                <button onClick={removeItem}>remove</button>
+              </td>
+              <td>
+                <button onClick={selectItem}>select</button>
+              </td>
+              <td>
+                <button onClick={deselectItem}>deselect</button>
+              </td>
+            </tr>
+          </tbody>
         </table>
       );
     }

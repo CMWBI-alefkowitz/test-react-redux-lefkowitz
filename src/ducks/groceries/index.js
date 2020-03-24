@@ -55,7 +55,6 @@ export default function reducer(state = initialState, action) {
       });
 
     case REMOVE_ITEM:
-      // Write a custom reducer that will remove an item from the list array
       return state;
 
     case SELECT_ITEM:
