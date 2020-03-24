@@ -58,12 +58,17 @@ export default function reducer(state = initialState, action) {
       return state;
 
     case SELECT_ITEM:
-      // Write a custom reducer that will select an item
-      return state;
+      return {
+        ...state,
+        isItemSelected: true,
+        selectedItem: payload
+      };
 
     case DESELECT_ITEM:
-      // Write a customer reducer that will deselect an item
-      return state;
+      return {
+        ...state,
+        isItemSelected: false
+      };
 
     default:
       return state;

@@ -11,7 +11,6 @@ export const ListTable = ({
       return (
         <tr key={id}>
           <td>{name}</td>
-          <td>{id}</td>
           <td>{category}</td>
           <td>{deliveryMethod}</td>
           <td>
@@ -32,10 +31,11 @@ export const ListTable = ({
     <div className="listTable">
       <table>
         <thead>
-          <tr>List Table</tr>
+          <tr>
+            <td>List Table</td>
+          </tr>
           <tr>
             <td>Name</td>
-            <td>ID</td>
             <td>Category</td>
             <td>Delivery Method</td>
           </tr>
