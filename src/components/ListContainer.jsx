@@ -1,36 +1,34 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
-import { addItem } from '../ducks/groceries';
+import { addItem } from "../ducks/groceries";
 
-import ListInputs from './ListInputs';
-import ListSelection from './ListSelection';
-import ListTable from './ListTable';
+import ListInputs from "./ListInputs";
+import ListSelection from "./ListSelection";
+import ListTable from "./ListTable";
 
-const mapStateToProps = ({
-  groceries: {
-    list: groceryList,
-  },
-}) => ({
-  groceryList,
+const mapStateToProps = ({ groceries: { list: groceryList } }) => ({
+  groceryList
 });
 
-const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-    addItem,
-  }, dispatch)
-);
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addItem
+    },
+    dispatch
+  );
 
 class ListContainer extends Component {
   componentWillMount() {
     /* eslint-disable no-console */
-    console.log('groceryList', this.props.groceryList, this);
+    console.log("groceryList", this.props.groceryList, this);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log('groceryList', nextProps.groceryList, this);
+    console.log("groceryList", nextProps.groceryList, this);
   }
 
   render() {
@@ -41,7 +39,7 @@ class ListContainer extends Component {
         </div>
         <div className="types">
           <ListSelection />
-          <ListTable />
+          <ListTable groceryList={this.props.groceryList} />
         </div>
       </section>
     );
@@ -53,10 +51,13 @@ ListContainer.propTypes = {
   // Actions
   addItem: PropTypes.func.isRequired,
   // Store
-  groceryList: PropTypes.array.isRequired,
+  groceryList: PropTypes.array.isRequired
   // Other
 };
 
-const ListContainerRedux = connect(mapStateToProps, mapDispatchToProps)(ListContainer);
+const ListContainerRedux = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ListContainer);
 
 export default ListContainerRedux;
