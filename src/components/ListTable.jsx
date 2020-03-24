@@ -32,6 +32,7 @@ export const ListTable = ({
     <div className="listTable">
       <table>
         <thead>
+          <tr>List Table</tr>
           <tr>
             <td>Name</td>
             <td>ID</td>
