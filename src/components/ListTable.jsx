@@ -9,30 +9,40 @@ export const ListTable = ({
   const groceryItems = groceryList.map(
     ({ id, name, category, deliveryMethod }) => {
       return (
-        <table>
-          <tbody>
-            <tr key={id}>
-              <td>{name}</td>
-              <td>{id}</td>
-              <td>{category}</td>
-              <td>{deliveryMethod}</td>
-              <td>
-                <button onClick={removeItem}>remove</button>
-              </td>
-              <td>
-                <button onClick={selectItem}>select</button>
-              </td>
-              <td>
-                <button onClick={deselectItem}>deselect</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <tr key={id}>
+          <td>{name}</td>
+          <td>{id}</td>
+          <td>{category}</td>
+          <td>{deliveryMethod}</td>
+          <td>
+            <button onClick={removeItem}>remove</button>
+          </td>
+          <td>
+            <button onClick={selectItem}>select</button>
+          </td>
+          <td>
+            <button onClick={deselectItem}>deselect</button>
+          </td>
+        </tr>
       );
     }
   );
 
-  return <div className="listTable">List Table {groceryItems}</div>;
+  return (
+    <div className="listTable">
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>ID</td>
+            <td>Category</td>
+            <td>Delivery Method</td>
+          </tr>
+        </thead>
+        <tbody>{groceryItems}</tbody>
+      </table>
+    </div>
+  );
 };
 
 export default ListTable;
